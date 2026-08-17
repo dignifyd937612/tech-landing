@@ -5,7 +5,7 @@ import { ChevronUp, ChevronDown } from "lucide-react";
 import { faqs } from "@/data/faqSection";
 
 export default function FaqSection() {
-  const [openId, setOpenId] = useState(null);
+  const [openId, setOpenId] = useState(faqs[0]?.id ?? null);
 
   const toggleFaq = (id) => {
     setOpenId((currentId) => (currentId === id ? null : id));
@@ -30,7 +30,7 @@ export default function FaqSection() {
                   className="flex min-h-[62px] w-full items-center justify-between gap-6 py-4 text-left"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-[14px] font-medium leading-[1.4] text-[#3f4a56] sm:text-[16px]">
+                  <span className="text-[14px] font-bold leading-[1.4] text-[#3f4a56] sm:text-[16px]">
                     {faq.question}
                   </span>
 

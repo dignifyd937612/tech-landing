@@ -95,11 +95,10 @@ export default function EngineeringServices() {
             type="button"
             onClick={() => {
               document.getElementById("consulting")?.scrollIntoView({
-                behavior: "smooth",
                 block: "start",
               });
             }}
-            className="mt-10 shrink-0 rounded-none bg-[#07182a] cursor-pointer px-7 py-2.5 text-[12px] font-medium text-white transition hover:bg-[#008ddd]"
+            className="mt-10 shrink-0 cursor-pointer rounded-md border bg-[#07182a] px-7 py-2.5 text-[12px] font-medium text-white transition hover:border-[#009EFF] hover:bg-[#009EFF]"
           >
             Know More
           </button>

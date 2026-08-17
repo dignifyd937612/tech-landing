@@ -2,7 +2,7 @@ export const testimonials = [
   {
     id: 1,
     review:
-      "Binnile has been a valuable and trusted partner in providing Software Quality Engineering services. Provided consultants are very well technically trained and available to deliver on aggressive timelines. Overall very happy with the services provided.",
+      "Dignifyd has been a valuable and trusted partner in providing Software Quality Engineering services. Provided consultants are very well technically trained and available to deliver on aggressive timelines. Overall very happy with the services provided.",
     name: "Anish Ohri",
     designation: "Director of Quality\nEngineering at Trepp.",
     company: "Trepp",
@@ -20,7 +20,7 @@ export const testimonials = [
   {
     id: 3,
     review:
-      "The company accomplished the project in time and fulfilled all business needs. Binnile Technologies Pvt. Ltd. produced a well-functioning website in a timely manner. The team communicated regularly with the client via Microsoft Teams and led a smooth workflow from start to finish.",
+      "The company accomplished the project in time and fulfilled all business needs. Dignifyd Technologies Pvt. Ltd. produced a well-functioning website in a timely manner. The team communicated regularly with the client via Microsoft Teams and led a smooth workflow from start to finish.",
     name: "Doris Setiawan",
     designation: "Technology Lead,\nSDL Tech",
     company: "SDL SOFT TECH",
@@ -29,7 +29,7 @@ export const testimonials = [
   {
     id: 4,
     review:
-      "Customer Centric, right level of technical expertise, real value for money. A number of things which immensely adds to Binnile's portfolio.",
+      "Customer Centric, right level of technical expertise, real value for money. A number of things which immensely adds to Dignifyd's portfolio.",
     name: "Gautam Chowdhary",
     designation: "Vice President\nDelivery at UK Technosoft Limited.",
     company: "JK TECH",

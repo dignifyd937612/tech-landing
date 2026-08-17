@@ -28,7 +28,7 @@ export const services = [
         alt: "CSS",
       },
       {
-        src: "/services/frontend/nextjs.png",
+        src: "/services/frontend/nextjs.webp",
         alt: "Next.js",
       },
       {

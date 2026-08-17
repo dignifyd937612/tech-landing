@@ -1,3 +1,4 @@
+"use client";
 export default function PlanningCallSection() {
   return (
     <section className="relative mt-15 overflow-hidden border-y border-[#dce5ec]">
@@ -23,8 +24,13 @@ export default function PlanningCallSection() {
         </div>
 
         <a
-          href="#consulting"
-          className="flex justify-center w-full shrink-0 bg-[#07182a] px-6 py-4 text-[14px] font-semibold text-white shadow-[0_8px_25px_rgba(0,158,255,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#008ddd] hover:shadow-[0_12px_30px_rgba(0,158,255,0.25)] sm:w-auto sm:px-11 sm:py-5 sm:text-[16px]"
+          type="button"
+          onClick={() => {
+            document.getElementById("consulting")?.scrollIntoView({
+              block: "start",
+            });
+          }}
+          className="flex justify-center w-full rounded-md border cursor-pointer shrink-0 bg-[#07182a] px-6 py-4 text-[14px] font-semibold text-white shadow-[0_8px_25px_rgba(0,158,255,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#008ddd] hover:shadow-[0_12px_30px_rgba(0,158,255,0.25)] sm:w-auto sm:px-11 sm:py-5 sm:text-[16px]"
         >
           Book my free planning call
         </a>

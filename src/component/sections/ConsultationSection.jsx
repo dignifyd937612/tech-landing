@@ -58,7 +58,7 @@ export default function ConsultationSection() {
 
             <button
               type="submit"
-              className="mt-9 rounded-md bg-[#009EFF] px-7 py-3 text-[11px] font-medium text-white transition hover:bg-[#008dde] sm:text-[12px]"
+              className="mt-9 rounded-md bg-[#07182a] px-7 py-3 text-[11px] font-medium text-white transition hover:bg-[#008dde] sm:text-[12px]"
             >
               Book a call
             </button>
