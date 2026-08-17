@@ -13,7 +13,7 @@ export default function ConsultationSection() {
           </h2>
 
           <p className="mt-4 text-[12px] leading-[1.5] text-white/80 sm:text-[13px]">
-            Get Custom Solutions & Recommendations, Estimates.
+            Get Custom Solutions & Recommendations.
           </p>
 
           <div className="mt-11">

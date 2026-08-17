@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
     <section className="bg-white px-5 pb-12 sm:px-8 sm:pb-16">
       <SectionHeader
         title="What Clients Are Saying About Us"
-        description="We've served more than 350+ clients globally in the last 8+ years and retained 95% of them."
+        description="We've served more than 50+ clients globally in the last 8+ years and retained 98% of them."
       />
 
       <div className="mx-auto mt-20 max-w-[1180px]">

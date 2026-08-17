@@ -35,18 +35,18 @@ export default function TestimonialCard({
 
         <div className="flex min-h-[55px] items-center">
           <div className="min-w-0 flex-1">
-            <p className="text-[12px] font-medium leading-[1.3] text-[#374151]">
+            {/* <p className="text-[12px] font-medium leading-[1.3] text-[#374151]">
               {name}
-            </p>
+            </p> */}
 
             <p className="mt-1 text-[9px] leading-[1.35] text-[#7c8798]">
               {designation}
             </p>
           </div>
 
-          <div className="mx-3 h-[50px] w-px bg-[#e1e5ea]" />
+          {/* <div className="mx-3 h-[50px] w-px bg-[#e1e5ea]" />
 
-          <div className="flex w-[90px] shrink-0 items-center gap-2">
+           <div className="flex w-[90px] shrink-0 items-center gap-2">
             {logo ? (
               <Image
                 src={logo}
@@ -57,13 +57,10 @@ export default function TestimonialCard({
               />
             ) : (
               <div className="h-[35px] w-[60px] rounded bg-[#f0f4f8]" />
-            )}
+            )} 
 
-            {/* Company name if needed */}
-            {/* <p className="text-[10px] font-medium text-[#2788e8]">
-              {company}
-            </p> */}
-          </div>
+          <p className="text-[10px] font-medium text-[#2788e8]">{company}</p>
+          </div> */}
         </div>
       </div>
     </article>

@@ -35,22 +35,22 @@ export const features = [
 
 export const stats = [
   {
-    value: 350,
+    value: 50,
     suffix: "+",
-    label: "Clients",
+    label: "Project Delivered",
   },
   {
-    value: 15,
-    suffix: "+",
-    label: "Countries",
-  },
-  {
-    value: 95,
+    value: 98,
     suffix: "%",
-    label: "Repeat Business",
+    label: "Client Retention",
   },
   {
-    value: 20000,
+    value: 8,
+    suffix: "%",
+    label: "Years of Experience",
+  },
+  {
+    value: 15000,
     suffix: "+",
     label: "Hours of Code",
   },

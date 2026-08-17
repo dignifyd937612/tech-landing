@@ -14,7 +14,7 @@ export default function Hero() {
             <p className="mt-7 max-w-[650px] text-[15px] leading-[1.55] text-white sm:text-[23.8px]">
               Get all three services under one roof with Dignifyd Tech. Our
               comprehensive software solutions manages your entire digital
-              experience and provides higher customer satisfaction
+              experience and provides higher customer satisfaction.
             </p>
 
             <div className="mt-7 flex w-full max-w-[650px] justify-center sm:justify-start">
@@ -51,9 +51,8 @@ export default function Hero() {
 
             <div className="relative z-10 w-full rounded-lg bg-[#07182A] px-8 py-9 sm:px-10 lg:h-[515px] lg:px-[48px] lg:py-10">
               <h2 className="mx-auto max-w-[430px] text-center text-[17px] leading-[1.45] font-medium text-white">
-                Let's discuss how our AI expertise can help you
-                <br />
-                achieve your goals
+                Let's discuss how our Development services can help you achieve
+                your goals
               </h2>
 
               <form className="mt-7">
