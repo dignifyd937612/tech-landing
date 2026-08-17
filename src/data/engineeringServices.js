@@ -82,7 +82,7 @@ export const services = [
         alt: "Hibernet",
       },
       {
-        src: "/services/backend/go.webp",
+        src: "/services/backend/go-programming.webp",
         alt: "go",
       },
       {
