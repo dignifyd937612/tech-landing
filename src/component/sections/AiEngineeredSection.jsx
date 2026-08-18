@@ -38,17 +38,19 @@ export default function AiEngineeredSection() {
         <div className="mt-10 grid grid-cols-2 gap-y-8 sm:grid-cols-4 sm:gap-y-0">
           {stats.map((stat) => (
             <div key={stat.label} className="text-left">
-              <p
-                className="count-number text-[34px] font-bold leading-none text-[#44484c] sm:text-[38px] lg:text-[40px]"
-                style={{ "--target": stat.value }}
-              >
-                <span className="counter" />
-                {stat.suffix}
-              </p>
+              <div className="w-fit text-center">
+                <p
+                  className="count-number text-[34px] font-bold leading-none text-[#44484c] sm:text-[38px] lg:text-[40px]"
+                  style={{ "--target": stat.value }}
+                >
+                  <span className="counter" />
+                  {stat.suffix}
+                </p>
 
-              <p className="mt-4 text-[14px] font-medium text-[#55585d] sm:text-[15px]">
-                {stat.label}
-              </p>
+                <p className="mt-4 text-[14px] font-medium text-[#55585d] sm:text-[15px]">
+                  {stat.label}
+                </p>
+              </div>
             </div>
           ))}
         </div>

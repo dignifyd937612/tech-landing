@@ -46,7 +46,7 @@ export const stats = [
   },
   {
     value: 8,
-    suffix: "%",
+    suffix: "+",
     label: "Years of Experience",
   },
   {
