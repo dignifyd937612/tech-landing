@@ -1,6 +1,78 @@
 import { fields, stats } from "@/data/hero";
+import { ResetCode, sendEnquiryRequest } from "@/redux/Reducer/EnquirySlice";
+import { useState, useCallback, useEffect } from "react";
+import toast from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import LoadingOverlay from "./LoadingOverlay";
+
+
+
 
 export default function Hero() {
+
+  const dispatch= useDispatch();
+
+  const [formData, setFormData] = useState({});
+
+const handleChange = (e) => {
+  const { name, value } = e.target;
+
+  setFormData((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
+};
+
+const {loading,addCode}= useSelector((state)=>state.enquiry);
+
+useEffect(()=>{
+  if(addCode === 200){
+    toast.success("Enquiry submitted successfully!");
+    dispatch(ResetCode());
+    setFormData('');
+  }
+
+},[addCode,dispatch])
+
+const submit = useCallback(() => {
+  if (!formData.name?.trim()) {
+    toast.error("Please Enter Name");
+    return;
+  }
+
+  if (!formData.email?.trim()) {
+    toast.error("Please Enter Email");
+    return;
+  }
+
+  if (!formData.phone?.trim()) {
+    toast.error("Please Enter Phone");
+    return;
+  }
+
+ 
+  const phoneRegex = /^[6-9]\d{9}$/;
+
+  if (!phoneRegex.test(formData.phone.trim())) {
+    toast.error("Please Enter a Valid 10 Digit Phone Number");
+    return;
+  }
+
+  const payload = {
+    name: formData.name,
+    email: formData.email,
+    message: formData.message || "",
+    phone: formData.phone,
+    company: formData.company || "",
+  };
+
+
+
+  dispatch(sendEnquiryRequest(payload));
+}, [dispatch, formData]);
+
+
+
   return (
     <section className="mb-20 bg-[#020810] pb-20">
       <div className="mx-auto flex min-h-[568px] max-w-[1650px] items-center px-6 pt-8 sm:px-8 lg:px-0 lg:pt-0">
@@ -55,15 +127,18 @@ export default function Hero() {
                 your goals
               </h2>
 
-              <form className="mt-7">
+              <div className="mt-7">
                 <div>
                   {fields.map((field) => (
                     <div key={field.name}>
                       <input
+                      
                         type={field.type}
                         name={field.name}
+                        value={formData[field.name] || ""}
+                        onChange={handleChange}
                         placeholder={field.placeholder}
-                        className="h-[52px] w-full border-0 border-b border-white/50 bg-transparent px-1 text-[12px] text-white outline-none placeholder:text-white focus:border-[#009EFF]"
+                        className="h-[52px] w-full border-0 border-b border-white/50 bg-transparent px-1 text-[15px] text-white outline-none placeholder:text-white focus:border-[#009EFF]"
                       />
                     </div>
                   ))}
@@ -71,16 +146,21 @@ export default function Hero() {
 
                 <div className="mt-9 flex justify-center">
                   <button
-                    type="submit"
-                    className="rounded-lg bg-[#009EFF] px-7 py-3 text-[11px] font-medium text-white transition hover:bg-[#008dde]"
+                  disabled={loading}
+                  onClick={submit}
+                    className="rounded-lg bg-[#009EFF] px-7 py-3 text-[14px] font-medium text-white transition hover:bg-[#008dde]"
                   >
-                    Book free call
+                   Book free call
+                   
                   </button>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
+        {
+          loading && <LoadingOverlay  show={loading}/>
+        }
       </div>
     </section>
   );

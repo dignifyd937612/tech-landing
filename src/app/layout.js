@@ -2,6 +2,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/component/common/SmoothScroll";
 import Script from "next/script";
+import ReduxProvider from "../redux/provider";
+import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -18,8 +20,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-poppins">
+        <ReduxProvider>
+
+   
         <SmoothScroll />
         {children}
+        </ReduxProvider>
+
+        <Toaster position="top-center" reverseOrder={false} />
       </body>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-VHWY59GWRT"

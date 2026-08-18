@@ -1,3 +1,6 @@
+'use client';
+
+
 import Footer from "@/component/Footer";
 import AiEngineeredSection from "@/component/sections/AiEngineeredSection";
 import ConsultationSection from "@/component/sections/ConsultationSection";
