@@ -83,18 +83,6 @@ export default function Footer() {
           <p className="text-[9px] leading-5 text-white/65 sm:text-[10px]">
             © 2026 dignifyd Technologies Private Limited. All Rights Reserved.
           </p>
-
-          <span className="hidden text-white/40 sm:inline">|</span>
-
-          <button className="text-[9px] text-white/65 transition hover:text-white sm:text-[10px]">
-            Terms & Conditions
-          </button>
-
-          <span className="hidden text-white/40 sm:inline">|</span>
-
-          <button className="text-[9px] text-white/65 transition hover:text-white sm:text-[10px]">
-            Privacy Policy
-          </button>
         </div>
       </div>
     </footer>
