@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState } from "react";
 import SectionHeader from "../common/SectionHeader";
 import { services } from "@/data/engineeringServices";
-import Link from "next/link";
 
 export default function EngineeringServices() {
   const [activeService, setActiveService] = useState("frontend");
@@ -20,8 +19,8 @@ export default function EngineeringServices() {
         description="We build robust web applications which your team can use every day without any hassle. Our tech services are ready to launch in the practical world for business growth."
       />
 
-      <div className="mx-auto mt-10 flex max-w-[1200px] flex-col lg:flex-row lg:items-start">
-        <div className="w-full self-start bg-[#030914] lg:h-fit lg:w-[355px] lg:shrink-0">
+      <div className="mx-auto mt-10 flex max-w-[1200px] flex-col md:flex-row md:items-start lg:flex-row">
+        <div className="w-full self-start bg-[#030914] md:w-[230px] md:shrink-0 lg:w-[355px]">
           {services.map((service) => {
             const isActive = activeService === service.id;
 
@@ -30,24 +29,24 @@ export default function EngineeringServices() {
                 key={service.id}
                 type="button"
                 onClick={() => setActiveService(service.id)}
-                className={`group relative flex h-[52px] w-full items-center border-b border-white/20 px-3 text-left transition-all duration-300 ${isActive ? "bg-[#071321]" : "bg-transparent hover:bg-[#071321]"}`}
+                className={`group relative flex h-[60px] w-full items-center border-b border-white/20 px-3 text-left transition-all duration-300 ${isActive ? "bg-[#071321]" : "bg-transparent hover:bg-[#071321]"} `}
               >
                 {isActive && (
-                  <span className="absolute top-1/2 right-[-16px] z-10 hidden -translate-y-1/2 border-y-[8px] border-l-[16px] border-y-transparent border-l-[#009EFF] lg:block" />
+                  <span className="absolute top-1/2 right-[-12px] z-20 hidden -translate-y-1/2 border-y-[7px] border-l-[12px] border-y-transparent border-l-[#009EFF] md:block" />
                 )}
 
-                <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center">
+                <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center md:h-[36px] md:w-[36px] lg:h-[42px] lg:w-[42px]">
                   <Image
                     src={service.icon}
                     alt=""
                     width={40}
                     height={40}
-                    className="h-[35px] w-[35px] object-contain"
+                    className="h-[35px] w-[35px] object-contain md:h-[30px] md:w-[30px] lg:h-[35px] lg:w-[35px]"
                   />
                 </div>
 
                 <span
-                  className={`ml-3 text-[12px] font-normal transition-colors ${isActive ? "text-white" : "text-white/70 group-hover:text-white"}`}
+                  className={`ml-3 text-[15px] font-normal transition-colors md:ml-2 md:text-[13px] lg:ml-3 lg:text-[15px] ${isActive ? "text-white" : "text-white/70 group-hover:text-white"} `}
                 >
                   {service.title}
                 </span>
@@ -56,36 +55,36 @@ export default function EngineeringServices() {
           })}
         </div>
 
-        <div className="flex min-h-[520px] flex-1 flex-col items-center px-6 py-12 text-center sm:px-10 lg:px-12 lg:py-10">
+        <div className="flex min-h-[520px] min-w-0 flex-1 flex-col items-center px-6 py-12 text-center md:px-5 md:py-8 lg:px-12 lg:py-10">
           <h2
             key={selectedService.id}
-            className="text-[26px] leading-[1.2] font-semibold text-[#3d3d3d] sm:text-[30px]"
+            className="text-[26px] leading-[1.2] font-semibold text-[#3d3d3d] md:text-[26px] lg:text-[32px]"
           >
             {selectedService.title}
           </h2>
 
           <p
             key={`${selectedService.id}-description`}
-            className="mt-5 max-w-[760px] text-[13px] leading-[1.6] text-[#60646a] sm:text-[14px]"
+            className="mt-5 max-w-[760px] text-[13px] leading-[1.6] text-[#60646a] md:text-[14px] lg:text-[18px]"
           >
             {selectedService.description}
           </p>
 
           <div
             key={`${selectedService.id}-logos`}
-            className="mt-9 grid w-full max-w-[850px] grid-cols-2 gap-y-6 sm:grid-cols-3 lg:flex lg:flex-wrap lg:justify-center lg:gap-y-8"
+            className="mt-9 grid w-full max-w-[850px] grid-cols-2 gap-y-6 md:grid-cols-3 md:gap-x-2 md:gap-y-4 lg:flex lg:flex-wrap lg:justify-center lg:gap-y-8"
           >
             {selectedService.logos.map((logo) => (
               <div
                 key={logo.alt}
-                className="flex h-[85px] items-center justify-center px-3 sm:h-[90px] sm:px-5 lg:h-[100px] lg:min-w-[20%] lg:flex-1 lg:border-r lg:border-dashed lg:border-[#d7dce2] lg:px-6 lg:last:border-r-0"
+                className="flex h-[85px] items-center justify-center px-3 md:h-[80px] md:px-2 lg:h-[100px] lg:min-w-[20%] lg:flex-1 lg:border-r lg:border-dashed lg:border-[#d7dce2] lg:px-6 lg:last:border-r-0"
               >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
                   width={150}
                   height={70}
-                  className="h-auto max-h-[48px] w-auto max-w-[125px] object-contain sm:max-h-[55px] sm:max-w-[135px] lg:max-h-[55px] lg:max-w-[140px]"
+                  className="h-auto max-h-[48px] w-auto max-w-[125px] object-contain md:max-h-[48px] md:max-w-[115px] lg:max-h-[55px] lg:max-w-[140px]"
                 />
               </div>
             ))}

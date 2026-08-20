@@ -1,7 +1,5 @@
-'use client';
+"use client";
 
-
-import Footer from "@/component/Footer";
 import AiEngineeredSection from "@/component/sections/AiEngineeredSection";
 import ConsultationSection from "@/component/sections/ConsultationSection";
 import EngineeringServices from "@/component/sections/EngineeringServices";
@@ -22,7 +20,6 @@ export default function Home() {
       <OverviewServices />
       <FaqSection />
       <ConsultationSection />
-      <Footer />
     </>
   );
 }

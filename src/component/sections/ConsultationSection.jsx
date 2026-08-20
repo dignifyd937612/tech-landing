@@ -1,85 +1,81 @@
 import { fields, steps } from "@/data/consultationSection";
-import { ResetCode, sendEnquiryRequest } from "../../redux/Reducer/EnquirySlice";
-import { useState,useEffect,useCallback } from "react";
+import {
+  ResetCode,
+  sendEnquiryRequest,
+} from "../../redux/Reducer/EnquirySlice";
+import { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import LoadingOverlay from "../LoadingOverlay";
 
-
-
-
-
 export default function ConsultationSection() {
-  const dispatch= useDispatch();
+  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
-    company:"",
+    company: "",
   });
 
-const handleChange = (e) => {
-  const { name, value } = e.target;
-   setFormData((prev) => ({
-    ...prev,
-    [name]: value,
-  }));
-};
-
-const {loading,addCode}= useSelector((state)=>state.enquiry);
-
-useEffect(() => {
-  if (addCode === 200) {
-    dispatch(ResetCode());
-
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-      company: "",
-    });
-  }
-}, [addCode, dispatch]);
-
-const submit = useCallback(() => {
-  if (!formData.name?.trim()) {
-    toast.error("Please Enter Name");
-    return;
-  }
-
-  if (!formData.email?.trim()) {
-    toast.error("Please Enter Email");
-    return;
-  }
-
-  if (!formData.phone?.trim()) {
-    toast.error("Please Enter Phone");
-    return;
-  }
-
- 
-  const phoneRegex = /^[6-9]\d{9}$/;
-
-  if (!phoneRegex.test(formData.phone.trim())) {
-    toast.error("Please Enter a Valid 10 Digit Phone Number");
-    return;
-  }
-
-  const payload = {
-    name: formData.name,
-    email: formData.email,
-    message: formData.message || "",
-    phone: formData.phone,
-    company: formData.company || "",
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
+  const { loading, addCode } = useSelector((state) => state.enquiry);
 
+  useEffect(() => {
+    if (addCode === 200) {
+      dispatch(ResetCode());
 
-  dispatch(sendEnquiryRequest(payload));
-}, [dispatch, formData]);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        company: "",
+      });
+    }
+  }, [addCode, dispatch]);
+
+  const submit = useCallback(() => {
+    if (!formData.name?.trim()) {
+      toast.error("Please Enter Name");
+      return;
+    }
+
+    if (!formData.email?.trim()) {
+      toast.error("Please Enter Email");
+      return;
+    }
+
+    if (!formData.phone?.trim()) {
+      toast.error("Please Enter Phone");
+      return;
+    }
+
+    const phoneRegex = /^[6-9]\d{9}$/;
+
+    if (!phoneRegex.test(formData.phone.trim())) {
+      toast.error("Please Enter a Valid 10 Digit Phone Number");
+      return;
+    }
+
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message || "",
+      phone: formData.phone,
+      company: formData.company || "",
+    };
+
+    dispatch(sendEnquiryRequest(payload));
+  }, [dispatch, formData]);
 
   return (
     <section
@@ -92,7 +88,7 @@ const submit = useCallback(() => {
             Three Steps and We Start Developing
           </h2>
 
-          <p className="mt-4 text-[12px] leading-[1.5] text-white/80 sm:text-[13px]">
+          <p className="mt-4 text-[12px] leading-[1.5] text-white/80 sm:text-[15px]">
             Get Custom Solutions & Recommendations.
           </p>
 
@@ -110,7 +106,7 @@ const submit = useCallback(() => {
                   {step.number}
                 </div>
 
-                <p className="max-w-[290px] pt-[2px] text-[12px] leading-[1.55] text-white/90 sm:text-[13px]">
+                <p className="max-w-[290px] pt-[2px] text-[12px] leading-[1.55] text-white/90 sm:text-[14px]">
                   {step.text}
                 </p>
               </div>
@@ -119,7 +115,7 @@ const submit = useCallback(() => {
         </div>
 
         <div className="w-full bg-[#f5f5f5] px-8 py-10 sm:px-10 sm:py-11 lg:w-[58%] lg:px-11 lg:py-12">
-          <h2 className="text-[26px] font-semibold leading-[1.2] text-[#3b3b3b] sm:text-[30px]">
+          <h2 className="text-[26px] font-semibold leading-[1.2] text-[#3b3b3b] sm:text-[32px]">
             Still Deciding? Book a Call
           </h2>
 
@@ -132,23 +128,20 @@ const submit = useCallback(() => {
                   name={field.name}
                   onChange={handleChange}
                   placeholder={field.placeholder}
-                  className="h-[59px] w-full border-0 border-b border-[#d4d8dc] bg-transparent px-1 text-[12px] text-[#333] outline-none placeholder:text-[#555] focus:border-[#009EFF] sm:text-[13px]"
+                  className="h-[65px] w-full border-0 border-b border-[#d4d8dc] bg-transparent px-1 text-[12px] text-[#333] outline-none placeholder:text-[#555] focus:border-[#009EFF] sm:text-[15px]"
                 />
               ))}
             </div>
 
             <button
-             onClick={submit}
+              onClick={submit}
               className="mt-9 rounded-md bg-[#07182a] px-7 py-3 text-[11px] font-medium text-white transition hover:bg-[#008dde] sm:text-[12px]"
             >
-           Book free call
+              Book free call
             </button>
           </div>
         </div>
-        {
-          loading && <LoadingOverlay  show={loading}/>
-        }
-        
+        {loading && <LoadingOverlay show={loading} />}
       </div>
     </section>
   );

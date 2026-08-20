@@ -13,7 +13,7 @@ export default function AiEngineeredSection() {
           <div className="grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-9">
             {features.map((feature, index) => (
               <div key={index} className="flex items-center gap-4">
-                <div className="relative flex h-[48px] w-[48px] shrink-0 items-center justify-center">
+                <div className="relative flex h-[48px] w-[48px] sahrink-0 items-center justify-center">
                   <Image
                     src={feature.icon}
                     alt={feature.title}
@@ -23,10 +23,8 @@ export default function AiEngineeredSection() {
                   />
                 </div>
 
-                <p className="text-[14px] are mujeh chaiye  font-medium leading-[1.35] text-[#55585d] sm:text-[15px]">
+                <p className="text-[14px] font-medium font-semibold leading-[1.35] text-[#55585d] sm:text-[16px]">
                   {feature.title}
-                  <br />
-                  {feature.subtitle}
                 </p>
               </div>
             ))}
@@ -47,7 +45,7 @@ export default function AiEngineeredSection() {
                   {stat.suffix}
                 </p>
 
-                <p className="mt-4 text-[14px] font-medium text-[#55585d] sm:text-[15px]">
+                <p className="mt-4 text-[14px] font-medium text-[#55585d] sm:text-[22px]">
                   {stat.label}
                 </p>
               </div>

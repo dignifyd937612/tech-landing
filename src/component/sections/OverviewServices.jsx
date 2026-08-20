@@ -37,7 +37,7 @@ export default function OverviewServices() {
               </div>
 
               <div className="mt-4">
-                <p className="text-[12px] leading-[1.55] text-[#60666e] sm:text-[13px]">
+                <p className="text-[15px] leading-[1.55] text-[#fffff] sm:text-[15x]">
                   {service.description}
                 </p>
               </div>

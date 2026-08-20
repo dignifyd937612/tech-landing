@@ -9,7 +9,7 @@ export default function SectionHeader({ title, description }) {
         <div className="mt-3 h-[4px] w-[225px] rounded-full bg-[#009EFF]" />
       </div>
 
-      <p className="mx-auto mt-3 max-w-[900px] text-center text-[14px] leading-6 text-[#666666] sm:text-[16px]">
+      <p className="mx-auto mt-3 max-w-[900px] text-center text-[14px] leading-6 text-[#fffff] sm:text-[17px]">
         {description}
       </p>
     </div>

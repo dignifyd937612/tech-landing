@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const offices = [
   {
@@ -9,7 +10,7 @@ const offices = [
   },
   {
     flag: "/flags/usa.jpg",
-    address: "2501 Chatham St, Springfield, Illinois",
+    address: "245 W Roosevelt Rd, West Chicago, IL 60185, USA",
     phone: "+1-877-735-0397",
   },
   {
@@ -43,7 +44,7 @@ export default function Footer() {
               className="h-auto w-[105px]"
             />
 
-            <p className="mt-3 max-w-[280px] text-[10px] leading-[1.55] text-white/75">
+            <p className="mt-3 max-w-[280px] text-[13px] leading-[1.60] text-white/80">
               Discover a modern hiring experience built for growing businesses,
               helping you attract top talent, nurture strong teams, support
               employee growth, streamline recruitment, and drive sustainable
@@ -54,23 +55,21 @@ export default function Footer() {
           {offices.map((office, index) => (
             <div
               key={`${office.address}-${index}`}
-              className={`min-h-[150px] border-b border-white/20 px-6 py-5 ${
-                index === 0 || index === 2 ? "lg:border-r" : ""
-              }`}
+              className={`min-h-[150px] border-b border-white/20 px-6 py-5 ${index === 0 || index === 2 ? "lg:border-r" : ""}`}
             >
               <Image
                 src={office.flag}
                 alt="Office location"
                 width={64}
                 height={38}
-                className="h-[38px] w-[64px] object-cover"
+                className="h-[42px] w-[68px] object-cover"
               />
 
-              <p className="mt-3 max-w-[280px] text-[9px] leading-[1.5] text-white/80 sm:text-[10px]">
+              <p className="mt-3 max-w-[280px] text-[12px] leading-[1.5] text-white/80 sm:text-[13px]">
                 {office.address}
               </p>
 
-              <p className="mt-1 text-[9px] leading-[1.4] text-white/75 sm:text-[10px]">
+              <p className="mt-1 text-[11px] leading-[1.4] text-white/75 sm:text-[12px]">
                 {office.phone}
               </p>
             </div>
@@ -80,8 +79,17 @@ export default function Footer() {
 
       <div className="border-t border-white/20 px-5 py-5">
         <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center">
-          <p className="text-[9px] leading-5 text-white/65 sm:text-[10px]">
-            © 2026 dignifyd Technologies Private Limited. All Rights Reserved.
+          <p className="text-[14px] leading-5 text-white/65 sm:text-[15px]">
+            © 2026 dignifyd Technologies Private Limited. All Rights Reserved
+            &nbsp;
+            <span>
+              <Link
+                href={"/privacy-policy"}
+                className="text-white hover:text-underline"
+              >
+                | Privacy and Policies
+              </Link>
+            </span>
           </p>
         </div>
       </div>

@@ -11,14 +11,14 @@ export default function TestimonialCard({
   return (
     <article className="relative flex h-full min-h-[325px] w-full flex-col rounded-[8px] border border-[#e5eaf0] bg-white px-5 pb-5 pt-10 shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
       <div className="absolute -top-[18px] left-[20px] flex h-[36px] w-[36px] items-center justify-center rounded-full bg-[#079FF5] shadow-[0_5px_12px_rgba(7,159,245,0.25)]">
-        <Quote size={17} strokeWidth={3} className="fill-white text-white" />
+        <Quote size={15} strokeWidth={3} className="fill-white text-white" />
       </div>
 
       <div className="flex items-center gap-[3px]">
         {[1, 2, 3, 4, 5].map((star) => (
           <Star
             key={star}
-            size={15}
+            size={20}
             strokeWidth={0}
             fill="currentColor"
             className="text-[#079FF5]"
@@ -26,7 +26,7 @@ export default function TestimonialCard({
         ))}
       </div>
 
-      <p className="mt-4 text-[12px] font-medium leading-[1.5] text-[#374151]">
+      <p className="mt-4 text-[15px] font-medium leading-[1.7] text-[#374151]">
         {review}
       </p>
 
@@ -39,7 +39,7 @@ export default function TestimonialCard({
               {name}
             </p> */}
 
-            <p className="mt-1 text-[9px] leading-[1.35] text-[#7c8798]">
+            <p className="mt-1 text-[12px] font-semibold leading-[1.35] text-[#fffff]">
               {designation}
             </p>
           </div>

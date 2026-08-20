@@ -4,6 +4,8 @@ import SmoothScroll from "@/component/common/SmoothScroll";
 import Script from "next/script";
 import ReduxProvider from "../redux/provider";
 import { Toaster } from "react-hot-toast";
+import Header from "@/component/Header";
+import Footer from "@/component/Footer";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -19,28 +21,32 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-poppins">
-        <ReduxProvider>
+      <body className="flex min-h-full flex-col font-poppins">
+        <Header />
 
-   
-        <SmoothScroll />
-        {children}
+        <ReduxProvider>
+          <SmoothScroll />
+          {children}
         </ReduxProvider>
 
         <Toaster position="top-center" reverseOrder={false} />
-      </body>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-VHWY59GWRT"
-        strategy="afterInteractive"
-      ></Script>
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
+
+        <Footer />
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VHWY59GWRT"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-VHWY59GWRT');
           `}
-      </Script>
+        </Script>
+      </body>
     </html>
   );
 }
