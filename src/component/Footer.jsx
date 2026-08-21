@@ -87,7 +87,7 @@ export default function Footer() {
                 href={"/privacy-policy"}
                 className="text-white hover:text-underline"
               >
-                | Privacy and Policies
+                | Privacy Policy
               </Link>
             </span>
           </p>

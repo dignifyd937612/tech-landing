@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import { scrollToview } from "../smoothscroll";
 
 export default function PrivacyPolicy() {
   return (
@@ -36,97 +38,97 @@ export default function PrivacyPolicy() {
                   Privacy Policy
                 </p>
 
-                <nav className="space-y-3 border-l border-white/10 pl-5">
-                  <a
-                    href="#information"
-                    className="block text-sm text-white/55 transition hover:text-[#009EFF]"
+                <nav className="w-max min-w-full space-y-3 border-l border-white/10 pl-5">
+                  <button
+                    onClick={() => scrollToview("information")}
+                    className="block w-full whitespace-nowrap text-left text-sm text-white/55 transition hover:text-[#009EFF]"
                   >
                     Information We Collect
-                  </a>
+                  </button>
 
-                  <a
-                    href="#processing"
-                    className="block text-sm text-white/55 transition hover:text-[#009EFF]"
+                  <button
+                    onClick={() => scrollToview("processing")}
+                    className="block w-full whitespace-nowrap text-left text-sm text-white/55 transition hover:text-[#009EFF]"
                   >
                     How We Process Your Information
-                  </a>
+                  </button>
 
-                  <a
-                    href="#legal-basis"
-                    className="block text-sm text-white/55 transition hover:text-[#009EFF]"
+                  <button
+                    onClick={() => scrollToview("legal-basis")}
+                    className="block w-full whitespace-nowrap text-left text-sm text-white/55 transition hover:text-[#009EFF]"
                   >
                     Legal Bases for Processing
-                  </a>
+                  </button>
 
-                  <a
-                    href="#sharing"
-                    className="block text-sm text-white/55 transition hover:text-[#009EFF]"
+                  <button
+                    onClick={() => scrollToview("sharing")}
+                    className="block w-full whitespace-nowrap text-left text-sm text-white/55 transition hover:text-[#009EFF]"
                   >
                     Sharing Your Personal Information
-                  </a>
+                  </button>
 
-                  <a
-                    href="#cookies"
-                    className="block text-sm text-white/55 transition hover:text-[#009EFF]"
+                  <button
+                    onClick={() => scrollToview("cookies")}
+                    className="block w-full whitespace-nowrap text-left text-sm text-white/55 transition hover:text-[#009EFF]"
                   >
                     Cookies and Tracking Technologies
-                  </a>
+                  </button>
 
-                  <a
-                    href="#retention"
-                    className="block text-sm text-white/55 transition hover:text-[#009EFF]"
+                  <button
+                    onClick={() => scrollToview("retention")}
+                    className="block w-full whitespace-nowrap text-left text-sm text-white/55 transition hover:text-[#009EFF]"
                   >
                     How Long We Keep Your Information
-                  </a>
+                  </button>
 
-                  <a
-                    href="#security"
-                    className="block text-sm text-white/55 transition hover:text-[#009EFF]"
+                  <button
+                    onClick={() => scrollToview("security")}
+                    className="block w-full whitespace-nowrap text-left text-sm text-white/55 transition hover:text-[#009EFF]"
                   >
                     How We Keep Your Information Safe
-                  </a>
+                  </button>
 
-                  <a
-                    href="#minors"
-                    className="block text-sm text-white/55 transition hover:text-[#009EFF]"
+                  <button
+                    onClick={() => scrollToview("minors")}
+                    className="block w-full whitespace-nowrap text-left text-sm text-white/55 transition hover:text-[#009EFF]"
                   >
                     Information From Minors
-                  </a>
+                  </button>
 
-                  <a
-                    href="#privacy-rights"
-                    className="block text-sm text-white/55 transition hover:text-[#009EFF]"
+                  <button
+                    onClick={() => scrollToview("privacy-rights")}
+                    className="block w-full whitespace-nowrap text-left text-sm text-white/55 transition hover:text-[#009EFF]"
                   >
                     Your Privacy Rights
-                  </a>
+                  </button>
 
-                  <a
-                    href="#do-not-track"
-                    className="block text-sm text-white/55 transition hover:text-[#009EFF]"
+                  <button
+                    onClick={() => scrollToview("do-not-track")}
+                    className="block w-full whitespace-nowrap text-left text-sm text-white/55 transition hover:text-[#009EFF]"
                   >
                     Do-Not-Track Features
-                  </a>
+                  </button>
 
-                  <a
-                    href="#us-privacy-rights"
-                    className="block text-sm text-white/55 transition hover:text-[#009EFF]"
+                  <button
+                    onClick={() => scrollToview("us-privacy-rights")}
+                    className="block w-full whitespace-nowrap text-left text-sm text-white/55 transition hover:text-[#009EFF]"
                   >
                     United States Privacy Rights
-                  </a>
+                  </button>
 
-                  <a
-                    href="#updates"
-                    className="block text-sm text-white/55 transition hover:text-[#009EFF]"
+                  <button
+                    onClick={() => scrollToview("updates")}
+                    className="block w-full whitespace-nowrap text-left text-sm text-white/55 transition hover:text-[#009EFF]"
                   >
                     Updates to This Notice
-                  </a>
+                  </button>
 
-                  <a
-                    href="#contact"
-                    className="block text-sm text-white/55 transition hover:text-[#009EFF]"
+                  <button
+                    onClick={() => scrollToview("contact")}
+                    className="block w-full whitespace-nowrap text-left text-sm text-white/55 transition hover:text-[#009EFF]"
                   >
                     Contact Us
-                  </a>
+                  </button>
                 </nav>
               </div>
             </aside>
@@ -389,12 +391,13 @@ export default function PrivacyPolicy() {
                     If you become aware of any data we may have collected from
                     children under age 18 or the equivalent age as specified by
                     law in your jurisdiction, please contact us at{" "}
-                    <a
+                    <button
+                      onClick={() => scrollToview("information")}
                       href="mailto:info@dignifyd.io"
                       className="text-[#009EFF] transition-colors hover:text-white"
                     >
                       info@dignifyd.io
-                    </a>
+                    </button>
                     .
                   </p>
                 </div>
@@ -533,12 +536,13 @@ export default function PrivacyPolicy() {
                   <p>
                     If you have questions or comments about this notice, you may
                     email us at{" "}
-                    <a
+                    <button
+                      onClick={() => scrollToview("information")}
                       href="mailto:info@dignifyd.io"
                       className="text-[#009EFF] transition-colors hover:text-white"
                     >
                       info@dignifyd.io
-                    </a>{" "}
+                    </button>{" "}
                     or contact us by post at:
                   </p>
 

@@ -37,6 +37,6 @@ export const fields = [
   {
     name: "message",
     type: "text",
-    placeholder: "How Can We Help You*",
+    placeholder: "How Can We Help You",
   },
 ];
